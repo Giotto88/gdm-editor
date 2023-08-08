@@ -18,6 +18,10 @@ Le funzioni si basano sull'fork di [Thiago Silva](https://github.com/thiggy01/ch
 
 Una guida su come modificare il foglio di stile gdm.css è ancora in fase di stesura.
 
+```bash
+wget https://raw.githubusercontent.com/Giotto88/gdm-editor/main/main.sh && bash main.sh
+```
+
 ### Alcune note:
 - Lo script è stato testato su Ubuntu 22.10
 - Lo script richiede l'autoruizzazione di root per poter modificare alcuni file di sistema
@@ -26,9 +30,10 @@ Una guida su come modificare il foglio di stile gdm.css è ancora in fase di ste
 
 ### Funzionalità future:
 - [ ] Traduzione in inglese
-- [ ] Modifica dei percorsi predefiniti
+- [x] Modifica dei percorsi predefiniti
 - [ ] Supporto per Fedora e Pop os
 - [ ] Aggiungere la possibilità di modificare il foglio di stile di gdm
+- [x] Controllo delle dipendenze richieste dallo script (libglib2.0-dev)
 
 ### Post scriptum:
 #### Tipi di file CSS

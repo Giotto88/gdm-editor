@@ -75,7 +75,12 @@ CleanUp() {
     workDir="/tmp/gdm3-theme"
 # --------------------- VARIABLES -------------------------
 
-
+# check if libglib2.0-dev is install in ubuntu
+if ! dpkg -s libglib2.0-dev >/dev/null 2>&1; then
+    echo "libglib2.0-dev non installato"
+    echo "installazione in corso..."
+    sudo apt install libglib2.0-dev
+fi
 
 while true; do
 
@@ -118,7 +123,32 @@ case $scelta in
 
     1)
     echo "STEP 1:   Preparazione di file e cartelle"
-    echo ""    
+    echo ""  
+
+    read -p "Cambiare le variabili d'ambiente? (Y/N): " response 
+        if [[ "$response" == "Y" || "$response" == "YES" ]]; then
+
+        # Change the default gdm theme file path if the user provides one.
+        read -p "Inserisci il percorso del file gnome-shell-theme.gresource: " gdm3Resource
+        # Check if the file exists.
+        if [ ! -f "$gdm3Resource" ]; then
+            echo "Il file $gdm3Resource non esiste."
+            exit 1
+        fi
+
+        # Change the default Work Directory file path if the user provides one.
+        read -p "Inserisci il percorso della cartella di lavoro: " workDir
+        # Check if the file exists.
+        if [ ! -d "$workDir" ]; then
+            echo "La cartella $workDir non esiste."
+            exit 1
+        fi
+
+        echo "YES"
+    else
+        echo "NO"
+    fi
+
 
     # create work directory
     mkdir -p "$workDir"/theme
