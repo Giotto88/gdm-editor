@@ -19,7 +19,10 @@ Le funzioni si basano sull'fork di [Thiago Silva](https://github.com/thiggy01/ch
 Una guida su come modificare il foglio di stile gdm.css è ancora in fase di stesura.
 
 ```bash
+[IT]
 wget https://raw.githubusercontent.com/Giotto88/gdm-editor/main/main.sh && bash main.sh
+[EN]
+wget https://raw.githubusercontent.com/Giotto88/gdm-editor/main/main.sh && bash main_en.sh
 ```
 
 ### Alcune note:
@@ -29,7 +32,7 @@ wget https://raw.githubusercontent.com/Giotto88/gdm-editor/main/main.sh && bash 
     - libglib2.0-dev (per la compilazione di sassc)
 
 ### Funzionalità future:
-- [ ] Traduzione in inglese
+- [x] Traduzione in inglese
 - [x] Modifica dei percorsi predefiniti
 - [ ] Supporto per Fedora e Pop os
 - [ ] Aggiungere la possibilità di modificare il foglio di stile di gdm
